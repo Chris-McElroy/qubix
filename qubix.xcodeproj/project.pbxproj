@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		1E59818A2838290100DF923E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5981892838290100DF923E /* main.swift */; };
+		1E5981912838292800DF923E /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5981902838292800DF923E /* Board.swift */; };
+		1E5981932838293700DF923E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5981922838293700DF923E /* Game.swift */; };
+		1E5981952838294F00DF923E /* Checks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5981942838294F00DF923E /* Checks.swift */; };
+		1E5981972838296200DF923E /* BoardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5981962838296200DF923E /* BoardHelper.swift */; };
+		1E598199283829D300DF923E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E598198283829D300DF923E /* Player.swift */; };
+		1E59819C283829F200DF923E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E59819B283829F200DF923E /* User.swift */; };
+		1E59819E28382A2500DF923E /* Cubist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E59819D28382A2500DF923E /* Cubist.swift */; };
+		1E5981A028382A3700DF923E /* Oracle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E59819F28382A3700DF923E /* Oracle.swift */; };
+		1E5981A228382A4100DF923E /* Novice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5981A128382A4100DF923E /* Novice.swift */; };
+		1E5981A428382A5000DF923E /* Defender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5981A328382A5000DF923E /* Defender.swift */; };
+		1E5981A628382A5D00DF923E /* Warrior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5981A528382A5D00DF923E /* Warrior.swift */; };
+		1E5981A828382A7400DF923E /* Tyrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5981A728382A7400DF923E /* Tyrant.swift */; };
+		1E5981AA28382AA900DF923E /* GeneralHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5981A928382AA900DF923E /* GeneralHelper.swift */; };
+		1E5981AC28382ADC00DF923E /* KeyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5981AB28382ADC00DF923E /* KeyHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +39,20 @@
 /* Begin PBXFileReference section */
 		1E5981862838290100DF923E /* qubix */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = qubix; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E5981892838290100DF923E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		1E5981902838292800DF923E /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		1E5981922838293700DF923E /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		1E5981942838294F00DF923E /* Checks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checks.swift; sourceTree = "<group>"; };
+		1E5981962838296200DF923E /* BoardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardHelper.swift; sourceTree = "<group>"; };
+		1E598198283829D300DF923E /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		1E59819B283829F200DF923E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1E59819D28382A2500DF923E /* Cubist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cubist.swift; sourceTree = "<group>"; };
+		1E59819F28382A3700DF923E /* Oracle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oracle.swift; sourceTree = "<group>"; };
+		1E5981A128382A4100DF923E /* Novice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Novice.swift; sourceTree = "<group>"; };
+		1E5981A328382A5000DF923E /* Defender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defender.swift; sourceTree = "<group>"; };
+		1E5981A528382A5D00DF923E /* Warrior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Warrior.swift; sourceTree = "<group>"; };
+		1E5981A728382A7400DF923E /* Tyrant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tyrant.swift; sourceTree = "<group>"; };
+		1E5981A928382AA900DF923E /* GeneralHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralHelper.swift; sourceTree = "<group>"; };
+		1E5981AB28382ADC00DF923E /* KeyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +86,30 @@
 			isa = PBXGroup;
 			children = (
 				1E5981892838290100DF923E /* main.swift */,
+				1E5981902838292800DF923E /* Board.swift */,
+				1E5981922838293700DF923E /* Game.swift */,
+				1E5981942838294F00DF923E /* Checks.swift */,
+				1E5981962838296200DF923E /* BoardHelper.swift */,
+				1E5981A928382AA900DF923E /* GeneralHelper.swift */,
+				1E5981AB28382ADC00DF923E /* KeyHelper.swift */,
+				1E59819A283829DF00DF923E /* players */,
 			);
 			path = qubix;
+			sourceTree = "<group>";
+		};
+		1E59819A283829DF00DF923E /* players */ = {
+			isa = PBXGroup;
+			children = (
+				1E598198283829D300DF923E /* Player.swift */,
+				1E59819B283829F200DF923E /* User.swift */,
+				1E5981A128382A4100DF923E /* Novice.swift */,
+				1E5981A328382A5000DF923E /* Defender.swift */,
+				1E5981A528382A5D00DF923E /* Warrior.swift */,
+				1E5981A728382A7400DF923E /* Tyrant.swift */,
+				1E59819F28382A3700DF923E /* Oracle.swift */,
+				1E59819D28382A2500DF923E /* Cubist.swift */,
+			);
+			path = players;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,7 +170,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E5981972838296200DF923E /* BoardHelper.swift in Sources */,
+				1E5981A828382A7400DF923E /* Tyrant.swift in Sources */,
+				1E59819E28382A2500DF923E /* Cubist.swift in Sources */,
+				1E5981952838294F00DF923E /* Checks.swift in Sources */,
+				1E5981912838292800DF923E /* Board.swift in Sources */,
+				1E5981A028382A3700DF923E /* Oracle.swift in Sources */,
+				1E5981932838293700DF923E /* Game.swift in Sources */,
+				1E5981A628382A5D00DF923E /* Warrior.swift in Sources */,
+				1E598199283829D300DF923E /* Player.swift in Sources */,
 				1E59818A2838290100DF923E /* main.swift in Sources */,
+				1E5981AA28382AA900DF923E /* GeneralHelper.swift in Sources */,
+				1E5981AC28382ADC00DF923E /* KeyHelper.swift in Sources */,
+				1E59819C283829F200DF923E /* User.swift in Sources */,
+				1E5981A228382A4100DF923E /* Novice.swift in Sources */,
+				1E5981A428382A5000DF923E /* Defender.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
