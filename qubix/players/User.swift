@@ -20,6 +20,7 @@ class User: Player {
 		while true {
 			print("your move:")
 			let lineIn = readLine()
+			guard lineIn != nil else { print("no answer"); return }
 			guard let planeOffset = ["a": 0, "b": 16, "c": 32, "d": 48][lineIn?.first] else { print("abcd missing! try again"); continue }
 			guard let num = Int(lineIn?.dropFirst() ?? ""), num >= 0 && num < 16 else { print("number error! try again"); continue }
 			let p = planeOffset + num

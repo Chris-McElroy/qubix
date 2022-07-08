@@ -21,7 +21,7 @@ enum GameMode: Int {
 	var trainValue: Int { self.rawValue - GameMode.novice.rawValue }
 }
 
-enum GameState: Int {
+enum GameState: Int, CustomStringConvertible {
 	// each one is 1 more
 	case error = 0, new, active, myWin, opWin, myTimeout, opTimeout, myResign, opResign, draw, ended, off
 	
@@ -45,6 +45,15 @@ enum GameState: Int {
 	
 	var opWin: Bool {
 		self == .opWin || self == .myTimeout || self == .myResign
+	}
+	
+	var description: String {
+		switch self {
+		case .opWin: return "you lost!"
+		case .myWin: return "you won!"
+		case .draw: return "it's a tie!"
+		default: return "how'd you do that? let me know!"
+		}
 	}
 }
 
@@ -120,8 +129,6 @@ class Game: ObservableObject {
 		gameState = .new
 		self.mode = mode
 		mostRecentGame = (mode, boardNum, turn, hints, time)
-		
-		UserDefaults.standard.set(10, forKey: "wfeoijf")
 		
 		board = Board()
 //		BoardScene.main.reset()
@@ -317,12 +324,12 @@ class Game: ObservableObject {
 //		moveImpactGenerator.prepare()
 //		GameLayout.main.startGameOpacities()
 		if totalTime != nil {
-			let num = gameNum
+//			let num = gameNum
 			lastStart[turn] = Date.now+2
 //			timers.append(Timer.every(0.1, run: { self.getCurrentTime(num: num) }))
 		}
 		gameState = .active
-		player[turn].move()
+		playGame()
 	}
 	
 	func getCurrentTime(num: Int) {
@@ -347,6 +354,24 @@ class Game: ObservableObject {
 		getHints(for: moves, loading: true)
 //		BoardScene.main.addCube(move: move.p, color: .of(n: player[turn^1].color))
 //		print(board)
+	}
+	
+	func playGame() {
+		var count = moves.count
+		
+		while true {
+			if board.hasW0(turn^1) { endGame(with: turn^1 == myTurn ? .myWin : .opWin); return }
+			else if board.numMoves() == 64 { endGame(with: .draw); return }
+			else {
+				player[turn].move()
+			}
+			if count == moves.count {
+				print("error! no move made")
+				return
+			} else {
+				count = moves.count
+			}
+		}
 	}
 	
 	func processMove(_ p: Int, for turn: Int, setup: [Int], time: Double? = nil) {
@@ -375,6 +400,7 @@ class Game: ObservableObject {
 		print(board)
 //		GameLayout.main.newMoveOpacities()
 		getHints(for: moves, time: time)
+		processingMove = false
 	}
 	
 	func processGhostMove(_ p: Int) {
@@ -400,6 +426,7 @@ class Game: ObservableObject {
 		print(board)
 //		GameLayout.main.newGhostMoveOpacities()
 		getHints(for: moves.dropLast(movesBack))
+		processingMove = false
 	}
 	
 	func checkAndProcessMove(_ p: Int, for turn: Int, setup: [Int], time: Double? = nil) {
@@ -415,7 +442,7 @@ class Game: ObservableObject {
 		guard !moves.contains(move) && (0..<64).contains(move.p) else { print("Invalid move!"); return }
 		guard movesBack == 0 else { return }
 		processingMove = true
-		let lastBoard = Board(board)
+//		let lastBoard = Board(board)
 		board.addMove(p)
 //		moveImpactGenerator.impactOccurred()
 //		BoardScene.main.showMove(p, wins: board.getWinLines(for: move.p))
@@ -486,6 +513,7 @@ class Game: ObservableObject {
 //			GameLayout.main.refreshHints()
 //			GameLayout.main.newMoveOpacities()
 //			if !hints && (mode == .online || mode.train) { findMisses() }
+			processingMove = false
 		}
 
 //		func cancelMove() {
@@ -663,7 +691,7 @@ class Game: ObservableObject {
 //		guard GameLayout.main.undoOpacity == .full else { return }
 		if processingMove { return }
 		guard gameState == .active else { return }
-		guard let move = moves.popLast() else { return }
+//		guard let move = moves.popLast() else { return } // TODO uncomment this if I add undo move back
 //		moveImpactGenerator.impactOccurred()
 //		player[0].cancelMove()
 //		player[1].cancelMove()

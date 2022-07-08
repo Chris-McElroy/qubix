@@ -83,7 +83,7 @@ class Player {
 	func getPause() -> Double { return 0 }
 	
 	func move() {
-		let startState = b.board
+//		let startState = b.board
 		let setup: [Int] = b.getSetup()
 		
 //		moveQueue.async { [self] in
@@ -93,7 +93,7 @@ class Player {
 		else if let m = opW1() { move = m }
 		else if let m = myW2() { move = m }
 		else { move = unforcedHeuristic() }
-		let delay = getPause()
+//		let delay = getPause()
 		
 		Game.main.processMove(move, for: self.n, setup: setup)
 //		}
